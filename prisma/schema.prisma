@@ -1,0 +1,176 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Client {
+  id           Int    @id @default(autoincrement())
+  name         String
+  address      String
+  phone_number String
+  shop_name    String
+  debt_balance Float  @default(0.0)
+
+  payments  Payment[]
+  purchases StorageOut[]
+
+  sales Sale[]
+
+  created_at String
+  updated_at String?
+  deleted_at String?
+}
+
+// client payment his debt
+model Payment {
+  id      Int     @id @default(autoincrement())
+  amount  Float
+  paid_at String
+  note    String?
+
+  client_id Int
+  client    Client @relation(fields: [client_id], references: [id])
+
+  sale_id Int?  @unique
+  sale    Sale? @relation(fields: [sale_id], references: [id])
+}
+
+//personal notes for app owner
+model Note {
+  id         Int     @id @default(autoincrement())
+  title      String
+  content    String
+  created_at String
+  deleted_at String?
+}
+
+// app owner expenses ( included in total outcome )
+model Expense {
+  id           Int     @id @default(autoincrement())
+  total_amount Float
+  reason       String
+  notes         String?
+
+  created_at String
+  sale_id    Int?   @unique
+  sale       Sale?  @relation(fields: [sale_id], references: [id])
+
+  deleted_at String?
+}
+
+model Sale {
+  id             Int         @id @default(autoincrement())
+  total_charge   Float
+  notes          String?
+  storage_outs   StorageOut[]
+  created_at     String
+  previous_client_debt Float
+  new_client_debt Float
+  payment        Payment?
+  expense        Expense?
+
+  client_id Int
+  client Client @relation(fields: [client_id], references: [id])
+
+  income Income[]
+}
+
+model StorageOut {
+  id                Int     @id @default(autoincrement())
+  quantity          Int
+  client_price   Float
+  total_client_charge   Float
+  client_id         Int
+  client            Client  @relation(fields: [client_id], references: [id])
+  sale_id           Int?
+  sale              Sale?   @relation(fields: [sale_id], references: [id])
+
+  flour_id Int
+  flour Flour @relation(fields: [flour_id], references: [id])
+
+  storage_in_id Int
+  storage_in StorageIn @relation(fields: [storage_in_id], references: [id])
+  created_at        String
+
+
+  income_id Int?
+  income Income? @relation(fields: [income_id], references: [id])
+}
+
+model StorageIn {
+  id Int @id @default(autoincrement())
+  
+  flour_id          Int
+  flour             Flour   @relation(fields: [flour_id], references: [id])
+  stock Int
+  unit_purchase_price Float
+  total_purchase_price Float
+  created_at        String
+
+  storage_outs StorageOut[]
+  flour_package FlourPackage?
+}
+
+model FlourPackage {
+  id Int @id @default(autoincrement())
+  stock Int
+  package_number Int
+  flour_id          Int
+  flour             Flour   @relation(fields: [flour_id], references: [id])
+  unit_purchase_price Float
+  created_at        String
+  storage_in_id Int @unique
+  storage_in StorageIn @relation(fields: [storage_in_id], references: [id])
+}
+
+
+model Flour {
+  id          Int    @id @default(autoincrement())
+  name        String
+  storageIns StorageIn[]
+  incomes Income[]
+  storage_outs StorageOut[]
+  flour_packages FlourPackage[]
+  stock Int @default(0)
+}
+
+model Income {
+  id Int @id @default(autoincrement())
+  sale_id Int @unique
+  sale Sale @relation(fields: [sale_id], references: [id])
+
+  storage_outs StorageOut[]
+
+  flour_id Int
+  flour Flour @relation(fields: [flour_id], references: [id])
+  created_at String
+
+  profit Float
+}
+
+model Manager {
+  id Int @id @default(autoincrement())
+  name String
+  username String
+  password String
+  linked_email String
+  created_at String
+}
+
+model Report {
+  id Int @id @default(autoincrement())
+  report_name String
+  report_month String
+  report_file String
+  created_at String
+}

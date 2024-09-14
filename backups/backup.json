@@ -1,0 +1,82 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "name": "test",
+      "address": "test",
+      "phone_number": "test",
+      "shop_name": "test",
+      "debt_balance": 0,
+      "created_at": "14-09-2024 02:44",
+      "updated_at": null,
+      "deleted_at": null
+    }
+  ],
+  "payments": [],
+  "notes": [],
+  "expenses": [],
+  "sales": [],
+  "storage_outs": [],
+  "storage_ins": [
+    {
+      "id": 1,
+      "flour_id": 1,
+      "stock": 1000,
+      "unit_purchase_price": 20,
+      "total_purchase_price": 20000,
+      "created_at": "14-09-2024 02:44"
+    }
+  ],
+  "flour_packages": [
+    {
+      "id": 1,
+      "stock": 1000,
+      "package_number": 161650490,
+      "flour_id": 1,
+      "unit_purchase_price": 20,
+      "created_at": "14-09-2024 02:44",
+      "storage_in_id": 1
+    }
+  ],
+  "flours": [
+    {
+      "id": 1,
+      "name": "درجة أولي",
+      "stock": 1000
+    },
+    {
+      "id": 2,
+      "name": "درجة ثانية",
+      "stock": 0
+    },
+    {
+      "id": 3,
+      "name": "درجة ثالثة",
+      "stock": 0
+    },
+    {
+      "id": 4,
+      "name": "درجة رابعة",
+      "stock": 0
+    }
+  ],
+  "incomes": [],
+  "managers": [
+    {
+      "id": 1,
+      "name": "احمد طارق",
+      "username": "ahmed",
+      "password": "$2b$10$xnm5fKoLjl.zu7KpTksOGOeSqFnTgDJYBlkWahg5J6GMgpoOu0Hoy",
+      "linked_email": "alitarek99944@gmail.com",
+      "created_at": "14-09-2024 02:44"
+    },
+    {
+      "id": 2,
+      "name": "طارق محمد",
+      "username": "tarek",
+      "password": "$2b$10$CS122/NcAh93nmcu6rgyeuj1wh47i7UcrfN.jXH59/0oaF.8R38Py",
+      "linked_email": "alitarek99944@gmail.com",
+      "created_at": "14-09-2024 02:44"
+    }
+  ]
+}

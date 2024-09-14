@@ -1,0 +1,442 @@
+{
+  "clients": [
+    {
+      "id": 5,
+      "name": "بن عمر بتول",
+      "address": "7922 رصيف أنيس",
+      "phone_number": "797.714.1228 x23260",
+      "shop_name": "الغربي, فقوسة and خنفير",
+      "debt_balance": 899.91,
+      "created_at": "2024-03-25T23:01:03.232Z",
+      "updated_at": "2024-07-23T04:56:01.670Z",
+      "deleted_at": null
+    },
+    {
+      "id": 6,
+      "name": "عوضية نيفر",
+      "address": "4322 جادة بودوارة",
+      "phone_number": "312.093.9499 x09404",
+      "shop_name": "الوحيشي, سعيد and الرقيق",
+      "debt_balance": 666.01,
+      "created_at": "2024-07-20T22:46:26.284Z",
+      "updated_at": "2024-07-23T06:27:24.916Z",
+      "deleted_at": null
+    },
+    {
+      "id": 7,
+      "name": "سيد حسام المولدي",
+      "address": "37817 درب، طريق قيس",
+      "phone_number": "001-329-7207 x23411",
+      "shop_name": "شقرون Group",
+      "debt_balance": 795.11,
+      "created_at": "2023-12-18T19:20:49.597Z",
+      "updated_at": "2024-07-23T15:32:20.892Z",
+      "deleted_at": "24-07-2024 06:21"
+    },
+    {
+      "id": 8,
+      "name": "لم يعد خلود هههههه",
+      "address": "420 مَمَر الصغير",
+      "phone_number": "1-617-876-9056 x313",
+      "shop_name": "بوديبة - بن عثمان",
+      "debt_balance": 804.85,
+      "created_at": "2024-01-10T10:02:01.905Z",
+      "updated_at": "2024-07-23T07:37:03.291Z",
+      "deleted_at": null
+    },
+    {
+      "id": 9,
+      "name": "Ali Tarek",
+      "address": "محمد نجيب",
+      "phone_number": "01150421159",
+      "shop_name": "الحواج",
+      "debt_balance": 0,
+      "created_at": "24-07-2024 06:21",
+      "updated_at": null,
+      "deleted_at": null
+    }
+  ],
+  "payments": [
+    {
+      "id": 1,
+      "amount": 100,
+      "paid_at": "24-07-2024 06:28",
+      "note": null,
+      "client_id": 5,
+      "sale_id": null
+    },
+    {
+      "id": 2,
+      "amount": 100,
+      "paid_at": "24-07-2024 06:29",
+      "note": "This is a simple note",
+      "client_id": 5,
+      "sale_id": null
+    }
+  ],
+  "notes": [
+    {
+      "id": 9,
+      "title": "بقرة عير أوافق",
+      "content": "الوادي صيف دورة. صداقة أقول مبنى الجرأة أقترح كل عضوية غير. يرتجف ينام يهرب الموسم حزين.\nمتقلب منطقة أميل يبحث. دولة المختارون المشي تدليك إعجاب. ربط منحنى النفخ صلب آكل باهظ.\nأقترح ذهبي ثم. ",
+      "created_at": "2023-09-04T08:21:25.047Z",
+      "deleted_at": null
+    },
+    {
+      "id": 10,
+      "title": "أشياء أغطي متى",
+      "content": "زعتر أكون متأخر. مضيف الجرأة صيف. إلا خادمة صحيح.\nيساعد كلا اخر. شمس واسع صديق مدح مرات إلتواء يفتح ماهر متشوق. مكاتب قيد يفضل فليكن يوضح فاجأ آمن نفسه فوق.\nأنهض مدينة آدم استراحة اقرر معتاد.",
+      "created_at": "2024-07-06T22:02:14.541Z",
+      "deleted_at": null
+    },
+    {
+      "id": 11,
+      "title": "قادم متنوع خادمة",
+      "content": "الحياة أحاول لكن عجز. مجموعة الثعالب سرور الجميع أنا يوضح بأغلبية خزانة قوي حبيب. الة اجلس متى تحدث رقبة أقترح يرفع و.\nامتياز أرى تدريبات تنبيه حبيب اخذت المحدد. عدد الشاعر أكون جمال يحذب أحد",
+      "created_at": "2024-06-05T02:48:28.144Z",
+      "deleted_at": null
+    },
+    {
+      "id": 12,
+      "title": "حسنًا صامت وَسَط",
+      "content": "حاضر جمهور يفصل اضحك ليتم لجأ تتدفق أطلق. خيار تدريبات اعتدال فوق رأى واحد نظيف طعام. مجموع اقود متطور أسقط الخدع.\nطبقة مقنع بحرص يتدحرج. ثابت يحب مادة ضجة بيئة يدق معظم أعترف حسنًا. يفحص خيا",
+      "created_at": "2023-07-27T03:30:26.384Z",
+      "deleted_at": null
+    },
+    {
+      "id": 13,
+      "title": "المرسول المنشئ فجأة",
+      "content": "كاحل أعلن جَذّاب عفوية القيء. فائدة يساهم بوق العائلة أعمى. ساحقة سليم الجاد معظم متطوع.\nمعك كان اسمنت. كائن ملعقة سأشرح ثلاثة سأفتح شئ لون بالكاد طالب. ثالث تدليك مبتذلة تملق تم عزيز.\nله مقا",
+      "created_at": "2023-12-05T07:49:55.083Z",
+      "deleted_at": null
+    },
+    {
+      "id": 14,
+      "title": "آلام ملاك اسم",
+      "content": "يحب يحشد انتصار طعام تعال يتدحرج صامت عادة نسج ابن. أنت رهيب المجلد ينام ضجة السماوي لوت سأخبرك يقي. مدينة يتمتع أفعل احب الحمامات وفير المحسن ماشية.\nتحمل صوت يتبنى. زال العليا حساس سماء متأث",
+      "created_at": "2023-12-26T18:26:24.375Z",
+      "deleted_at": null
+    },
+    {
+      "id": 15,
+      "title": "ملل معتاد مرارًا",
+      "content": "الترحيل مربع فضائي يكلف نجمة قبلت الريح سلسلة. استوديو رماد تواصل يعرفون أعتبر. إعجاب العزلة سن شجرة جهد رحلة مرسوم ديكور ينتقد.\nحذر بجوار آمن جمال إخلاء يأسر. وحشي حال كيف. أحب مراعاة برونز ",
+      "created_at": "2024-03-17T14:34:20.016Z",
+      "deleted_at": null
+    },
+    {
+      "id": 16,
+      "title": "فارغ خادمة أخضر",
+      "content": "كلب نجمة جميل. ماشية أحمل سلب. لجأ قبول العاشر نفع حب.\nقديم المرسول ملكنا دواء أطير أو مشرق أخشى شروط. الغرفة ثلاثة أوزة خزان سرور ويفر يهرب مكان يجب تدليك. مبروك عريض نجحت الفراء.\nآمل أقول م",
+      "created_at": "2024-06-18T23:10:20.083Z",
+      "deleted_at": null
+    },
+    {
+      "id": 17,
+      "title": "Note Title",
+      "content": "Content Title",
+      "created_at": "24-07-2024 06:37",
+      "deleted_at": "24-07-2024 06:37"
+    }
+  ],
+  "expenses": [
+    {
+      "id": 9,
+      "total_amount": 502.37,
+      "reason": "آخرون استطيع منتج.",
+      "notes": "صداقة ساطع يجب يحب عليه. الرأفة استراحة الملابس شائع زجاجة العزلة. سمحت الحمدون الجسم مسرح ذلك عقل.",
+      "created_at": "2023-10-29T09:31:22.840Z",
+      "sale_id": null,
+      "deleted_at": null
+    },
+    {
+      "id": 10,
+      "total_amount": 508.07,
+      "reason": "نتيجة اناقش زعتر قبول رجولي عالميا أرض لجأ.",
+      "notes": "بلطف مواطنة بقرة هم حقا. دولة حقيقي فضول المجلد نتهم يمين أفضل العنكبوت مستمر ناعم. انتهاء عليه اختراعات تستوعب.",
+      "created_at": "2023-08-12T23:52:17.696Z",
+      "sale_id": null,
+      "deleted_at": null
+    },
+    {
+      "id": 11,
+      "total_amount": 865.12,
+      "reason": "أفعل اضفت كيك الجسم ولا واسع بالكاد.",
+      "notes": "كرمة أمشي يزيل الضرورات انتصار. معك العزلة دعه. يصدق يقارن مهجور صدر جهد التي عالي يحضر جميل وقت.",
+      "created_at": "2023-12-05T12:57:05.263Z",
+      "sale_id": null,
+      "deleted_at": null
+    },
+    {
+      "id": 12,
+      "total_amount": 109.11,
+      "reason": "منجلي اضع و مجمع احترام عمر مبتذلة.",
+      "notes": "بدانة إعجاب إلى مريح متوسط نجح ينمو. وقت خادمة خفض طعام تذوق منجلي مرحبا. تأكيد الاستخدام المعجل.",
+      "created_at": "2024-01-31T04:06:15.393Z",
+      "sale_id": null,
+      "deleted_at": null
+    },
+    {
+      "id": 13,
+      "total_amount": 632.76,
+      "reason": "بلدة حتى تعرُّف أدافع هؤلاء حسنة نظيف مرحبا حقيقة سيصيبني.",
+      "notes": "قَوس يتعقب العاشر سماء قبلت صحة حب. كائن يمارس أقسم جميل عزيزتي. أو سلسلة عفوية نقود بقدر جسم.",
+      "created_at": "2024-02-23T04:14:47.740Z",
+      "sale_id": null,
+      "deleted_at": null
+    },
+    {
+      "id": 14,
+      "total_amount": 504.59,
+      "reason": "رقابة أتفق أدعم لجأ يفحص نتهم اسم سيل هم مقنع.",
+      "notes": "محل فوز فوز ينظف لكن ثالث سير. عباس رأى ساطع شعر وَسَط مزيج شئ أرتب إمضاء. شراب مختفي بالباص اتحداك صديق احترام واسع.",
+      "created_at": "2023-11-29T19:58:14.149Z",
+      "sale_id": null,
+      "deleted_at": null
+    },
+    {
+      "id": 15,
+      "total_amount": 638.16,
+      "reason": "محفوظ سيارة انتصار يقام متساوي سهل.",
+      "notes": "معماري أدير مشرق. حجرة أفتح رسغ أفضل. أخضر مكان خطة تستوعب.",
+      "created_at": "2024-04-12T06:16:52.348Z",
+      "sale_id": null,
+      "deleted_at": null
+    },
+    {
+      "id": 16,
+      "total_amount": 162.85,
+      "reason": "المحسنات يمسح مجموع دعوى شمس احب عمة اعتدال يظهر جوية.",
+      "notes": "خزانة مصطنع يحفظ كان. كلب سأشرح يقولون يفعل معتاد يتردد عادة منحن. يسلم سهل بأغلبية جمع.",
+      "created_at": "2023-12-03T21:04:25.318Z",
+      "sale_id": null,
+      "deleted_at": "24-07-2024 06:26"
+    },
+    {
+      "id": 19,
+      "total_amount": 20,
+      "reason": "دفع مبلغ مع عملية شراء دقيق",
+      "notes": null,
+      "created_at": "24-07-2024 14:41",
+      "sale_id": 3,
+      "deleted_at": null
+    }
+  ],
+  "sales": [
+    {
+      "id": 3,
+      "total_charge": 0,
+      "notes": "Simple Note",
+      "created_at": "24-07-2024 14:41",
+      "previous_client_debt": 10,
+      "new_client_debt": 1110,
+      "client_id": 5
+    }
+  ],
+  "storage_outs": [
+    {
+      "id": 6,
+      "quantity": 30,
+      "client_price": 20,
+      "total_client_charge": 600,
+      "client_id": 5,
+      "sale_id": 3,
+      "flour_id": 6,
+      "storage_in_id": 17,
+      "created_at": "24-07-2024 14:41",
+      "income_id": null
+    },
+    {
+      "id": 7,
+      "quantity": 40,
+      "client_price": 20,
+      "total_client_charge": 800,
+      "client_id": 5,
+      "sale_id": 3,
+      "flour_id": 5,
+      "storage_in_id": 12,
+      "created_at": "24-07-2024 14:41",
+      "income_id": null
+    }
+  ],
+  "storage_ins": [
+    {
+      "id": 7,
+      "flour_id": 5,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 13:42"
+    },
+    {
+      "id": 8,
+      "flour_id": 5,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 13:49"
+    },
+    {
+      "id": 9,
+      "flour_id": 5,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 14:25"
+    },
+    {
+      "id": 10,
+      "flour_id": 5,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 14:25"
+    },
+    {
+      "id": 11,
+      "flour_id": 5,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 14:25"
+    },
+    {
+      "id": 12,
+      "flour_id": 5,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 14:27"
+    },
+    {
+      "id": 13,
+      "flour_id": 5,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 14:27"
+    },
+    {
+      "id": 14,
+      "flour_id": 5,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 14:27"
+    },
+    {
+      "id": 15,
+      "flour_id": 5,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 14:30"
+    },
+    {
+      "id": 16,
+      "flour_id": 5,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 14:30"
+    },
+    {
+      "id": 17,
+      "flour_id": 5,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 14:30"
+    },
+    {
+      "id": 18,
+      "flour_id": 5,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 14:30"
+    },
+    {
+      "id": 19,
+      "flour_id": 5,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 14:30"
+    },
+    {
+      "id": 20,
+      "flour_id": 6,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 14:30"
+    },
+    {
+      "id": 21,
+      "flour_id": 6,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 14:30"
+    },
+    {
+      "id": 22,
+      "flour_id": 6,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 14:30"
+    },
+    {
+      "id": 23,
+      "flour_id": 6,
+      "stock": 73,
+      "unit_purchase_price": 11,
+      "total_purchase_price": 803,
+      "created_at": "24-07-2024 14:30"
+    }
+  ],
+  "flour_packages": [],
+  "flours": [
+    {
+      "id": 5,
+      "name": "درجة أولي",
+      "stock": 949
+    },
+    {
+      "id": 6,
+      "name": "درجة ثانية",
+      "stock": 292
+    },
+    {
+      "id": 7,
+      "name": "درجة ثالثة",
+      "stock": 0
+    },
+    {
+      "id": 8,
+      "name": "درجة رابعة",
+      "stock": 0
+    }
+  ],
+  "incomes": [],
+  "managers": [
+    {
+      "id": 3,
+      "name": "احمد طارق",
+      "username": "ahmed",
+      "password": "$2b$10$i9nF3p9B2Z5Yh7DYtopX7eYylbgtJPwU7armHcghVIK1FFPGsaZ/y",
+      "linked_email": "alitarek99944@gmail.com",
+      "created_at": "24-07-2024 05:57"
+    },
+    {
+      "id": 4,
+      "name": "طارق محمد",
+      "username": "tarek",
+      "password": "$2b$10$PBrGfI89y66dzGnvJNr8bO7l.9IgE5dWN92lHMo3E1xetvbWWwQLi",
+      "linked_email": "alitarek99944@gmail.com",
+      "created_at": "24-07-2024 05:57"
+    }
+  ]
+}

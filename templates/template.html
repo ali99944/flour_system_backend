@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقرير نظام تخزين الدقيق</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto px-4 py-8">
+        <header class="mb-12 text-center">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">تقرير نظام تخزين الدقيق</h1>
+            <p class="text-xl text-gray-600">نظرة عامة شهرية - {{reportMonth}} {{reportYear}}</p>
+        </header>
+
+        <section class="mb-12 bg-white rounded-lg shadow-md p-4">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">نظرة عامة على النظام</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-blue-100 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold text-blue-800">إجمالي المدخلات</h3>
+                    <p class="text-3xl font-bold text-blue-600">{{totalStorageIns}}</p>
+                </div>
+                <div class="bg-green-100 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold text-green-800">إجمالي المخرجات</h3>
+                    <p class="text-3xl font-bold text-green-600">{{totalStorageOuts}}</p>
+                </div>
+                <div class="bg-yellow-100 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold text-yellow-800">إجمالي المبيعات</h3>
+                    <p class="text-3xl font-bold text-yellow-600">{{totalSales}}</p>
+                </div>
+                <div class="bg-purple-100 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold text-purple-800">إجمالي الربح</h3>
+                    <p class="text-3xl font-bold text-purple-600">{{totalProfit}} جنيه</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12 bg-white rounded-lg shadow-md p-4">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">مخزون الدقيق</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-right border-collapse">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="p-3 font-semibold">نوع الدقيق</th>
+                            <th class="p-3 font-semibold">المخزون الحالي</th>
+                            <th class="p-3 font-semibold">إجمالي الداخل</th>
+                            <th class="p-3 font-semibold">إجمالي الخارج</th>
+                            <th class="p-3 font-semibold">نسبة الدوران</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each flourTypes}}
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="p-3">{{name}}</td>
+                            <td class="p-3">{{currentStock}} شيكارة</td>
+                            <td class="p-3">{{totalIn}} شيكارة</td>
+                            <td class="p-3">{{totalOut}} شيكارة</td>
+                            <td class="p-3">{{turnoverRate}}%</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="mb-12 bg-white rounded-lg shadow-md p-4">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">المدخلات (عبوات الدقيق)</h2>
+            {{#each flourTypes}}
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold text-gray-700 mb-3">{{name}}</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-right border-collapse">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th class="p-3 font-semibold">رقم العبوة</th>
+                                <th class="p-3 font-semibold">الكمية</th>
+                                <th class="p-3 font-semibold">سعر الشراء للوحدة</th>
+                                <th class="p-3 font-semibold">إجمالي سعر الشراء</th>
+                                <th class="p-3 font-semibold">التاريخ</th>
+                                <th class="p-3 font-semibold">المورد</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each packages}}
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="p-3">{{packageNumber}}</td>
+                                <td class="p-3">{{stock}} شيكارة</td>
+                                <td class="p-3">{{unitPurchasePrice}} جنيه</td>
+                                <td class="p-3">{{totalPurchasePrice}} جنيه</td>
+                                <td class="p-3">{{createdAt}}</td>
+                                <td class="p-3">{{supplier}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {{/each}}
+        </section>
+
+        <section class="mb-12 bg-white rounded-lg shadow-md p-4">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">المخرجات</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-right border-collapse">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="p-3 font-semibold">نوع الدقيق</th>
+                            <th class="p-3 font-semibold">الكمية</th>
+                            <th class="p-3 font-semibold">سعر العميل</th>
+                            <th class="p-3 font-semibold">إجمالي الرسوم</th>
+                            <th class="p-3 font-semibold">العميل</th>
+                            <th class="p-3 font-semibold">التاريخ</th>
+                            <th class="p-3 font-semibold">طريقة الدفع</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each storageOuts}}
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="p-3">{{flourType}}</td>
+                            <td class="p-3">{{quantity}} شيكارة</td>
+                            <td class="p-3">{{clientPrice}} جنيه</td>
+                            <td class="p-3">{{totalClientCharge}} جنيه</td>
+                            <td class="p-3">{{clientName}} ({{clientShopName}})</td>
+                            <td class="p-3">{{createdAt}}</td>
+                            <td class="p-3">{{paymentMethod}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="mb-12 bg-white rounded-lg shadow-md p-4">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">كبار العملاء</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {{#each topClients}}
+                <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">{{name}}</h3>
+                    <p class="text-gray-600 mb-1">المتجر: {{shopName}}</p>
+                    <p class="text-gray-600 mb-1">إجمالي المشتريات: {{totalPurchases}}</p>
+                    <p class="text-gray-600 mb-1">إجمالي الإنفاق: {{totalSpent}} جنيه</p>
+                    <p class="text-gray-600">نوع الدقيق المفضل: {{preferredFlourType}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </section>
+
+        <section class="mb-12 bg-white rounded-lg shadow-md p-4" style="page-break-before: always;">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">ملخص مالي</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">الدخل</h3>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between">
+                            <span>إجمالي المبيعات:</span>
+                            <span class="font-semibold">{{totalSalesAmount}} جنيه</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>إجمالي المدفوعات المستلمة:</span>
+                            <span class="font-semibold">{{totalPaymentsReceived}} جنيه</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>الديون المحصلة:</span>
+                            <span class="font-semibold">{{collectedDebts}} جنيه</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">المصروفات</h3>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between">
+                            <span>إجمالي تكلفة الشراء:</span>
+                            <span class="font-semibold">{{totalPurchaseCost}} جنيه</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>مصروفات التشغيل:</span>
+                            <span class="font-semibold">{{operatingExpenses}} جنيه</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>مصروفات أخرى:</span>
+                            <span class="font-semibold">{{otherExpenses}} جنيه</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-700 mb-3">تحليل الربح</h3>
+                <ul class="space-y-2">
+                    <li class="flex justify-between">
+                        <span>إجمالي الربح:</span>
+                        <span class="font-semibold">{{grossProfit}} جنيه</span>
+                    </li>
+                    <li class="flex justify-between">
+                        <span>صافي الربح:</span>
+                        <span class="font-semibold">{{netProfit}} جنيه</span>
+                    </li>
+                    <li class="flex justify-between">
+                        <span>هامش الربح:</span>
+                        <span class="font-semibold">{{profitMargin}}%</span>
+                    </li>
+                    <li class="flex justify-between">
+                        <span>العائد على الاستثمار:</span>
+                        <span class="font-semibold">{{returnOnInvestment}}%</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="mb-12 bg-white rounded-lg shadow-md p-4">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">توقعات الشهر القادم</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">المبيعات المتوقعة</h3>
+                    <ul class="space-y-2">
+                        {{#each expectedSales}}
+                        <li class="flex justify-between">
+                            <span>{{flourType}}:</span>
+                            <span class="font-semibold">{{amount}} شيكارة</span>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">الإيرادات المتوقعة</h3>
+                    <p class="text-2xl font-bold text-green-600">{{expectedRevenue}} جنيه</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-500 text-sm mt-12">
+            <p>تم إنشاؤه في {{generatedDate}} | ت��رير نظام تخزين الدقيق</p>
+        </footer>
+    </div>
+</body>
+</html>

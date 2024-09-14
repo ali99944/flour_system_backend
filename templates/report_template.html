@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقرير النظام</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            direction: rtl;
+        }
+
+        .details-container {
+            padding: 1rem;
+            background-color: #f9fafb;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .details-container.open {
+            display: block;
+        }
+
+        .toggle-button {
+            cursor: pointer;
+            color: #3490dc;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow p-2 flex items-center justify-between">
+        <h1 class="text-3xl font-bold">دقيق عرفات</h1>
+        <img src="http://localhost:3000/storage/images/flour.png" alt="شعار النظام" class="h-16">
+    </header>
+
+    <main class="p-6">
+        <!-- Monthly Overview Section -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">نظرة عامة على الشهر</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="p-4 bg-white rounded-lg shadow">
+                    <h3 class="text-xl font-semibold">إجمالي المبيعات</h3>
+                    <p class="text-2xl font-bold text-green-500">10000</p>
+                </div>
+                <div class="p-4 bg-white rounded-lg shadow">
+                    <h3 class="text-xl font-semibold">عدد المعاملات</h3>
+                    <p class="text-2xl font-bold text-blue-500">250</p>
+                </div>
+                <div class="p-4 bg-white rounded-lg shadow">
+                    <h3 class="text-xl font-semibold">عدد العملاء الجدد</h3>
+                    <p class="text-2xl font-bold text-red-500">30</p>
+                </div>
+                <div class="p-4 bg-white rounded-lg shadow">
+                    <h3 class="text-xl font-semibold">إجمالي المصاريف</h3>
+                    <p class="text-2xl font-bold text-purple-500">5000</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Clients Section -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">أفضل العملاء</h2>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <table class="min-w-full text-right">
+                    <thead>
+                        <tr>
+                            <th class="border-b p-4">اسم العميل</th>
+                            <th class="border-b p-4">إجمالي المشتريات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border-b p-4">أحمد علي</td>
+                            <td class="border-b p-4 text-green-500 font-bold">5000</td>
+                        </tr>
+                        <tr>
+                            <td class="border-b p-4">محمد عبد الله</td>
+                            <td class="border-b p-4 text-green-500 font-bold">4000</td>
+                        </tr>
+                        <tr>
+                            <td class="border-b p-4">سارة محمود</td>
+                            <td class="border-b p-4 text-green-500 font-bold">3000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Inventory Status Section -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">حالة المخزون</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Flour Type 1 -->
+                <div class="p-4 bg-white rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-2">النوع 1</h3>
+                    <p class="text-sm mb-2">الكمية المتاحة: <span class="font-bold">100</span></p>
+                    <p class="text-sm mb-4">الحد الأدنى: <span class="font-bold">50</span></p>
+                    <div class="bg-gray-100 p-4 rounded-md">
+                        <h4 class="text-lg font-semibold mb-2">تفاصيل التخزين</h4>
+                        <div>
+                            <div class="border-b pb-2 mb-2">
+                                <p class="font-semibold">تخزين 1</p>
+                                <p class="text-sm">الكمية: 30</p>
+                                <p class="text-sm">سعر الوحدة: 20 ريال</p>
+                            </div>
+                            <div class="border-b pb-2 mb-2">
+                                <p class="font-semibold">تخزين 2</p>
+                                <p class="text-sm">الكمية: 25</p>
+                                <p class="text-sm">سعر الوحدة: 22 ريال</p>
+                            </div>
+                            <div class="border-b pb-2 mb-2">
+                                <p class="font-semibold">تخزين 3</p>
+                                <p class="text-sm">الكمية: 25</p>
+                                <p class="text-sm">سعر الوحدة: 21 ريال</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">تخزين 4</p>
+                                <p class="text-sm">الكمية: 20</p>
+                                <p class="text-sm">سعر الوحدة: 23 ريال</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flour Type 2 -->
+                <div class="p-4 bg-white rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-2">النوع 2</h3>
+                    <p class="text-sm mb-2">الكمية المتاحة: <span class="font-bold">150</span></p>
+                    <p class="text-sm mb-4">الحد الأدنى: <span class="font-bold">70</span></p>
+                    <div class="bg-gray-100 p-4 rounded-md">
+                        <h4 class="text-lg font-semibold mb-2">تفاصيل التخزين</h4>
+                        <div>
+                            <div class="border-b pb-2 mb-2">
+                                <p class="font-semibold">تخزين 1</p>
+                                <p class="text-sm">الكمية: 50</p>
+                                <p class="text-sm">سعر الوحدة: 18 ريال</p>
+                            </div>
+                            <div class="border-b pb-2 mb-2">
+                                <p class="font-semibold">تخزين 2</p>
+                                <p class="text-sm">الكمية: 40</p>
+                                <p class="text-sm">سعر الوحدة: 19 ريال</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">تخزين 3</p>
+                                <p class="text-sm">الكمية: 30</p>
+                                <p class="text-sm">سعر الوحدة: 20 ريال</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flour Type 3 -->
+                <div class="p-4 bg-white rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-2">النوع 3</h3>
+                    <p class="text-sm mb-2">الكمية المتاحة: <span class="font-bold">200</span></p>
+                    <p class="text-sm mb-4">الحد الأدنى: <span class="font-bold">100</span></p>
+                    <div class="bg-gray-100 p-4 rounded-md">
+                        <h4 class="text-lg font-semibold mb-2">تفاصيل التخزين</h4>
+                        <div>
+                            <div class="border-b pb-2 mb-2">
+                                <p class="font-semibold">تخزين 1</p>
+                                <p class="text-sm">الكمية: 60</p>
+                                <p class="text-sm">سعر الوحدة: 25 ريال</p>
+                            </div>
+                            <div class="border-b pb-2 mb-2">
+                                <p class="font-semibold">تخزين 2</p>
+                                <p class="text-sm">الكمية: 50</p>
+                                <p class="text-sm">سعر الوحدة: 26 ريال</p>
+                            </div>
+                            <div class="border-b pb-2 mb-2">
+                                <p class="font-semibold">تخزين 3</p>
+                                <p class="text-sm">الكمية: 50</p>
+                                <p class="text-sm">سعر الوحدة: 27 ريال</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">تخزين 4</p>
+                                <p class="text-sm">الكمية: 40</p>
+                                <p class="text-sm">سعر الوحدة: 28 ريال</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flour Type 4 -->
+                <div class="p-4 bg-white rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-2">النوع 4</h3>
+                    <p class="text-sm mb-2">الكمية المتاحة: <span class="font-bold">120</span></p>
+                    <p class="text-sm mb-4">الحد الأدنى: <span class="font-bold">60</span></p>
+                    <div class="bg-gray-100 p-4 rounded-md">
+                        <h4 class="text-lg font-semibold mb-2">تفاصيل التخزين</h4>
+                        <div>
+                            <div class="border-b pb-2 mb-2">
+                                <p class="font-semibold">تخزين 1</p>
+                                <p class="text-sm">الكمية: 40</p>
+                                <p class="text-sm">سعر الوحدة: 15 ريال</p>
+                            </div>
+                            <div class="border-b pb-2 mb-2">
+                                <p class="font-semibold">تخزين 2</p>
+                                <p class="text-sm">الكمية: 30</p>
+                                <p class="text-sm">سعر الوحدة: 16 ريال</p>
+                            </div>
+                            <div class="border-b pb-2 mb-2">
+                                <p class="font-semibold">تخزين 3</p>
+                                <p class="text-sm">الكمية: 30</p>
+                                <p class="text-sm">سعر الوحدة: 17 ريال</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">تخزين 4</p>
+                                <p class="text-sm">الكمية: 20</p>
+                                <p class="text-sm">سعر الوحدة: 18 ريال</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Income Summary Section -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">ملخص الدخل</h2>
+            <div class="p-4 bg-white rounded-lg shadow">
+                <p class="text-xl font-semibold">إجمالي الدخل: <span class="text-green-500">15000 ريال</span></p>
+                <p class="text-xl font-semibold">إجمالي المصاريف: <span class="text-red-500">5000 ريال</span></p>
+                <p class="text-xl font-semibold">صافي الربح: <span class="text-green-500">10000 ريال</span></p>
+            </div>
+        </section>
+
+        <!-- Actionable Insights Section -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">رؤى قابلة للتنفيذ</h2>
+            <div class="p-4 bg-white rounded-lg shadow">
+                <ul class="list-disc pl-5">
+                    <li>زيادة المخزون للأنواع التي تتعرض لنفاد سريع.</li>
+                    <li>تقديم عروض خاصة للعملاء الأكثر شراءً لزيادة ولائهم.</li>
+                    <li>مراجعة وتحديث الأسعار لضمان تحقيق هامش ربح مناسب.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Clients Debt Table -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">مستحقات العملاء</h2>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <table class="min-w-full text-right">
+                    <thead>
+                        <tr>
+                            <th class="border-b p-4">اسم العميل</th>
+                            <th class="border-b p-4">رصيد الدين</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border-b p-4">أحمد علي</td>
+                            <td class="border-b p-4 text-red-500 font-bold">1500 ريال</td>
+                        </tr>
+                        <tr>
+                            <td class="border-b p-4">محمد عبد الله</td>
+                            <td class="border-b p-4 text-red-500 font-bold">800 ريال</td>
+                        </tr>
+                        <tr>
+                            <td class="border-b p-4">سارة محمود</td>
+                            <td class="border-b p-4 text-red-500 font-bold">500 ريال</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Sales Table -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">تفاصيل المبيعات</h2>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <table class="min-w-full text-right">
+                    <thead>
+                        <tr>
+                            <th class="border-b p-4">رقم البيع</th>
+                            <th class="border-b p-4">اسم العميل</th>
+                            <th class="border-b p-4">نوع الدقيق</th>
+                            <th class="border-b p-4">الكمية</th>
+                            <th class="border-b p-4">السعر الإجمالي</th>
+                            <th class="border-b p-4">تاريخ البيع</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border-b p-4">001</td>
+                            <td class="border-b p-4">أحمد علي</td>
+                            <td class="border-b p-4">نوع 1</td>
+                            <td class="border-b p-4">50 كجم</td>
+                            <td class="border-b p-4">1000 ريال</td>
+                            <td class="border-b p-4">2024-08-01</td>
+                        </tr>
+                        <tr id="details-001" class="details-container">
+                            <td colspan="7">
+                                <div class="p-4 bg-gray-100 rounded-md">
+                                    <h3 class="text-lg font-semibold mb-2">تفاصيل الشراء</h3>
+                                    <p class="font-semibold">النوع: نوع 1</p>
+                                    <p class="font-semibold">الكمية: 50 كجم</p>
+                                    <p class="font-semibold">السعر الإجمالي: 1000 ريال</p>
+                                    <h4 class="text-lg font-semibold mt-4 mb-2">تفاصيل التخزين</h4>
+                                    <ul>
+                                        <li>تخزين 1: 20 كجم - 20 ريال/كجم</li>
+                                        <li>تخزين 2: 15 كجم - 22 ريال/كجم</li>
+                                        <li>تخزين 3: 15 كجم - 21 ريال/كجم</li>
+                                        <li>تخزين 4: 10 كجم - 23 ريال/كجم</li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border-b p-4">002</td>
+                            <td class="border-b p-4">محمد عبد الله</td>
+                            <td class="border-b p-4">نوع 2</td>
+                            <td class="border-b p-4">30 كجم</td>
+                            <td class="border-b p-4">600 ريال</td>
+                            <td class="border-b p-4">2024-08-05</td>
+                        </tr>
+                        <tr id="details-002" class="details-container">
+                            <td colspan="7">
+                                <div class="p-4 bg-gray-100 rounded-md">
+                                    <h3 class="text-lg font-semibold mb-2">تفاصيل الشراء</h3>
+                                    <p class="font-semibold">النوع: نوع 2</p>
+                                    <p class="font-semibold">الكمية: 30 كجم</p>
+                                    <p class="font-semibold">السعر الإجمالي: 600 ريال</p>
+                                    <h4 class="text-lg font-semibold mt-4 mb-2">تفاصيل التخزين</h4>
+                                    <ul>
+                                        <li>تخزين 1: 10 كجم - 20 ريال/كجم</li>
+                                        <li>تخزين 2: 10 كجم - 22 ريال/كجم</li>
+                                        <li>تخزين 3: 10 كجم - 21 ريال/كجم</li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Expenses Table -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">تفاصيل المصاريف</h2>
+            <div class="bg-white p-6 rounded-lg shadow overflow-x-auto">
+                <table class="min-w-full text-right">
+                    <thead>
+                        <tr>
+                            <th class="border-b p-4">رقم المصروف</th>
+                            <th class="border-b p-4">السبب</th>
+                            <th class="border-b p-4">المبلغ</th>
+                            <th class="border-b p-4">التاريخ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border-b p-4">001</td>
+                            <td class="border-b p-4">شراء معدات</td>
+                            <td class="border-b p-4">2,000 ريال</td>
+                            <td class="border-b p-4">2024-08-01</td>
+                        </tr>
+                        <tr>
+                            <td class="border-b p-4">002</td>
+                            <td class="border-b p-4">صيانة</td>
+                            <td class="border-b p-4">1,500 ريال</td>
+                            <td class="border-b p-4">2024-08-12</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

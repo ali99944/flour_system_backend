@@ -1,0 +1,6 @@
+[
+  {
+    "type": "sqlite",
+    "path": "e:\\workspace\\projects\\flour_storage_management_system\\flour_storage_server\\prisma\\dev.db"
+  }
+]
