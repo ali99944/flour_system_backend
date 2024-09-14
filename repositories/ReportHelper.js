@@ -227,6 +227,7 @@ class ReportHelper {
 
                     const browser = await puppeteer.launch({
                         headless: 'new',
+                        args: ['--no-sandbox', '--disable-setuid-sandbox']
                     });
                     const page = await browser.newPage();
 
@@ -241,7 +242,7 @@ class ReportHelper {
                         printBackground: true, 
                         format: 'A3' 
                     });
-                    
+
 
                     await browser.close();
                     logger.info(`Report generated successfully: ${filename}`);
